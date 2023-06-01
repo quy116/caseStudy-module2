@@ -147,6 +147,33 @@ public class EmployeeService implements IEmployeeService {
     }
 
     @Override
+    public List<Employee> deleteEmployeeService() {
+        List<Employee> employeeList = list;
+        System.out.println("nhập name nhân viên để xoá");
+        String input = sc.nextLine();
+        for (int i = 0; i < list.size(); i++) {
+            if (input.equals(list.get(i).getName())){
+                employeeList.remove(i);
+            }
+        }
+        employeeRepository.deleteEmployeeRepository(employeeList);
+        return employeeList;
+    }
+
+    @Override
+    public List<Employee> findEmployeeService() {
+        List<Employee> employeeList = list;
+        System.out.println("nhập name nhân viên để timf");
+        String input = sc.nextLine();
+        for (int i = 0; i < list.size(); i++) {
+            if (input.equals(list.get(i).getName())){
+                System.out.println(list.get(i));
+            }
+        }
+        return employeeList;
+    }
+
+    @Override
     public void addEmployeeService() {
         String inputCode;
         do {

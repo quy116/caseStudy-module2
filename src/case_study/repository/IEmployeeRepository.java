@@ -7,5 +7,6 @@ import java.util.List;
 public interface IEmployeeRepository {
     List<Employee> displayEmployeeRepository();
     void editEmployeeRepository(List<Employee> employeeListService);
+    void deleteEmployeeRepository(List<Employee> employeeListService);
     void addEmployeeRepository(Employee employee);
 }

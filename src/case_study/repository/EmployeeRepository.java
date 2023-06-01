@@ -23,6 +23,11 @@ public class EmployeeRepository implements IEmployeeRepository {
         readAndWriteFileEmployee.write(employeeListService, Path);
     }
 
+    @Override
+    public void deleteEmployeeRepository(List<Employee> employeeListService) {
+        readAndWriteFileEmployee.write(employeeListService, Path);
+    }
+
 
     @Override
     public void addEmployeeRepository(Employee employee) {

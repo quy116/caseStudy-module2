@@ -11,9 +11,11 @@ public class EmployeeManagement {
         boolean flag = true;
         do {
             System.out.println("1.display list Employee\n" +
-                    "2. add new emloyee\n" +
-                    "3. edit emloyee\n" +
-                    "4. return main menu");
+                    "2. add new Employee\n" +
+                    "3. edit Employee\n" +
+                    "4. delete Employee \n" +
+                    "5. find Employee \n" +
+                    "6. return main menu");
             String input = sc.nextLine();
             switch (input){
                 case "1":
@@ -26,6 +28,12 @@ public class EmployeeManagement {
                     employeeService.editEmployeeService();
                     break;
                 case "4":
+                    employeeService.deleteEmployeeService();
+                    break;
+                case "5":
+                    employeeService.findEmployeeService();
+                    break;
+                case "6":
                     flag = false;
                     break;
                 default:

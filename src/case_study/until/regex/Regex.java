@@ -5,6 +5,9 @@ import java.time.Period;
 
 public class Regex {
     private static final String VALIDATE_REGEX_CODENAME = "^KH-[0-9]{4}$";
+    private static final String VALIDATE_REGEX_CODENAME_HOUSE = "^HO-[0-9]{0,9}$";
+    private static final String VALIDATE_REGEX_CODENAME_VILLA = "^VL-[0-9]{0,9}$";
+    private static final String VALIDATE_REGEX_CODENAME_ROOM = "^RO-[0-9]{0,9}$";
     private static final String VALIDATE_REGEX_CODENAME_EMPLOYEE = "^NV-[0-9]{4}$";
 
     private static final String VALIDATE_REGEX_NAME = "^^([\\p{Lu}][\\p{Ll}]{1,8})(\\s([\\p{Lu}]|[\\p{Lu}][\\p{Ll}]{1,10})){0,5}$$";
@@ -16,6 +19,15 @@ public class Regex {
     private static final String VALIDATE_REGEX_TELEPHONE = "^0[0-9]{9}$";
 
     private static final String VALIDATE_REGEX_EMAIL = "^[A-Za-z0-9]+[A-Za-z0-9]*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)$";
+    public static boolean checkRegexCodeNameHouse(String codeName) {
+        return codeName.matches(VALIDATE_REGEX_CODENAME_HOUSE) ? true : false;
+    }
+    public static boolean checkRegexCodeNameVilla(String codeName) {
+        return codeName.matches(VALIDATE_REGEX_CODENAME_VILLA) ? true : false;
+    }
+    public static boolean checkRegexCodeNameRoom(String codeName) {
+        return codeName.matches(VALIDATE_REGEX_CODENAME_ROOM) ? true : false;
+    }
     public static boolean checkRegexCodeNameCustomer(String codeName) {
         return codeName.matches(VALIDATE_REGEX_CODENAME) ? true : false;
     }

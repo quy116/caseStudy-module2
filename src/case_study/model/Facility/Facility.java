@@ -3,15 +3,15 @@ package case_study.model.Facility;
 public abstract class Facility {
     private String code;
     private String nameService;
-    private String area;
-    private String money;
-    private String maxPeople;
+    private double area;
+    private double money;
+    private int maxPeople;
     private String rentalType;
 
     public Facility() {
     }
 
-    public Facility(String code, String nameService, String area, String money, String maxPeople, String rentalType) {
+    public Facility(String code, String nameService, double area, Double money, int maxPeople, String rentalType) {
         this.code = code;
         this.nameService = nameService;
         this.area = area;
@@ -36,27 +36,27 @@ public abstract class Facility {
         this.nameService = nameService;
     }
 
-    public String getArea() {
+    public double getArea() {
         return area;
     }
 
-    public void setArea(String area) {
+    public void setArea(double area) {
         this.area = area;
     }
 
-    public String getMoney() {
+    public double getMoney() {
         return money;
     }
 
-    public void setMoney(String money) {
+    public void setMoney(double money) {
         this.money = money;
     }
 
-    public String getMaxPeople() {
+    public int getMaxPeople() {
         return maxPeople;
     }
 
-    public void setMaxPeople(String maxPeople) {
+    public void setMaxPeople(int maxPeople) {
         this.maxPeople = maxPeople;
     }
 

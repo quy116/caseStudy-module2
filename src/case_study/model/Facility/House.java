@@ -2,12 +2,12 @@ package case_study.model.Facility;
 
 public class House extends Facility {
     private String roomStandard;
-    private String numberFloor;
+    private int numberFloor;
 
     public House() {
     }
 
-    public House(String code, String nameService, String area, String money, String maxPeople, String rentalType, String roomStandard, String numberFloor) {
+    public House(String code, String nameService, double area, Double money, int maxPeople, String rentalType, String roomStandard, int numberFloor) {
         super(code, nameService, area, money, maxPeople, rentalType);
         this.roomStandard = roomStandard;
         this.numberFloor = numberFloor;
@@ -21,11 +21,11 @@ public class House extends Facility {
         this.roomStandard = roomStandard;
     }
 
-    public String getNumberFloor() {
+    public int getNumberFloor() {
         return numberFloor;
     }
 
-    public void setNumberFloor(String numberFloor) {
+    public void setNumberFloor(int numberFloor) {
         this.numberFloor = numberFloor;
     }
 
