@@ -5,6 +5,7 @@ import case_study.model.Facility.House;
 import case_study.model.Facility.Room;
 import case_study.model.Facility.Villa;
 import case_study.repository.FacilityRepository;
+import case_study.repository.IFacilityRepository;
 import case_study.until.regex.Regex;
 
 import java.util.Map;
@@ -12,12 +13,9 @@ import java.util.Scanner;
 import java.util.Set;
 
 public class FacilityService implements IFacilityService {
-    //Room(String code, String nameService, String area, String money, String maxPeople, String rentalType, String freeService) {
-    //House(String code, String nameService, String area, Double money, String maxPeople, String rentalType, String roomStandard, String numberFloor)
-    //Villa(String code, String nameService, String area, Double money, String maxPeople, String rentalType, String roomStandard, String poolArea, String numberFloor)
-    private FacilityRepository facilityRepository = new FacilityRepository();
+    private static final IFacilityRepository facilityRepository = new FacilityRepository();
     private Map<Facility, Integer> facilityIntegerMap = facilityRepository.getAll();
-    Scanner sc = new Scanner(System.in);
+    private Scanner sc = new Scanner(System.in);
 
     @Override
     public void addRoomService() {
@@ -155,10 +153,32 @@ public class FacilityService implements IFacilityService {
     }
 
     @Override
+    public void deleteService() {
+        Set<Facility> facilitySet = facilityIntegerMap.keySet();
+        System.out.println("nhap key de xoa");
+        String input = sc.nextLine();
+        for (Facility facility : facilitySet) {
+            if (input.equals(facility.getCode())) {
+                facilityRepository.deleteFacilityRepository(facility);
+            }
+        }
+    }
+
+    @Override
     public void displayFacility() {
         Set<Facility> facilitySet = facilityIntegerMap.keySet();
         for (Facility facility : facilitySet) {
             System.out.println(facility);
+            System.out.println("key" + facilityIntegerMap.get(facility));
+        }
+    }
+
+    public void displayFacilityNumber() {
+        Set<Facility> facilitySet = facilityIntegerMap.keySet();
+        for (Facility facility : facilitySet) {
+            if (facilityIntegerMap.get(facility) >= 5) {
+                System.out.println(facility + "key " + facilityIntegerMap.get(facility));
+            }
         }
     }
 

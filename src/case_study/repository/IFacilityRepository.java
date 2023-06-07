@@ -13,6 +13,9 @@ public interface IFacilityRepository {
     void addVillaRepository(Villa villa);
 
     void addHouseRepository(House house);
+    void deleteFacilityRepository(Facility facility);
 
     Map<Facility, Integer> getAll();
+    void countKey(String code);
+
 }
